@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeto Segura</title>
+    <style>
+      /* --- ESTILO GERAL --- */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Cabeçalho */
+      header {
+        background-color: #fff;
+        padding: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .logo {
+        font-weight: bold;
+        color: #4a148c;
+        font-size: 1.1rem;
+      }
+
+      .btn-sair {
+        background-color: #d32f2f;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      /* Container */
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        padding-bottom: 80px; /* Espaço extra no final */
+      }
+
+      #menu-principal {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .btn-menu {
+        border: none;
+        padding: 25px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 12px;
+        cursor: pointer;
+        text-align: left;
+        transition: transform 0.2s;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-menu:active {
+        transform: scale(0.98);
+      }
+
+      /* Cores do Menu */
+      .btn-ajuda {
+        background-color: #ffebee;
+        color: #b71c1c;
+        border-left: 6px solid #b71c1c;
+      }
+      .btn-apoio {
+        background-color: #e8f5e9;
+        color: #1b5e20;
+        border-left: 6px solid #1b5e20;
+      }
+      .btn-informar {
+        background-color: #f3e5f5;
+        color: #4a148c;
+        border-left: 6px solid #4a148c;
+      }
+      .btn-sobre {
+        background-color: #e0e0e0;
+        color: #424242;
+        border-left: 6px solid #424242;
+      }
+
+      .icone {
+        font-size: 24px;
+      }
+
+      /* --- TELAS DE CONTEÚDO --- */
+      .tela-conteudo {
+        display: none;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        animation: fadeIn 0.3s;
+      }
+
+      .btn-voltar {
+        background: #eee;
+        border: none;
+        color: #333;
+        padding: 10px 15px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-bottom: 20px;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      h2 {
+        color: #4a148c;
+        margin-top: 10px;
+        border-bottom: 2px solid #f3e5f5;
+        padding-bottom: 10px;
+      }
+      h3 {
+        color: #6a1b9a;
+        margin-top: 25px;
+        font-size: 1.1rem;
+      }
+
+      /* Estilos específicos para texto informativo */
+      .box-info {
+        background-color: #fafafa;
+        border-left: 4px solid #6a1b9a;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 0 8px 8px 0;
+      }
+
+      .lista-sinais li {
+        margin-bottom: 8px;
+      }
+      .destaque-lei {
+        font-weight: bold;
+        color: #4a148c;
+      }
+
+      .destaque-tel {
+        display: block;
+        background-color: #d32f2f;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 20px;
+        margin: 15px 0;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">Projeto Segura</div>
+      <button class="btn-sair" onclick="location.replace('https://google.com')">
+        X SAIR
+      </button>
+    </header>
+
+    <main class="container">
+      <div id="menu-principal">
+        <div style="text-align: center; margin-bottom: 10px; color: #555">
+          <p>Toque em uma opção:</p>
+        </div>
+
+        <button class="btn-menu btn-ajuda" onclick="abrirTela('tela-ajuda')">
+          <div>
+            <div>AJUDA IMEDIATA</div>
+            <div style="font-size: 13px; font-weight: normal">
+              Estou em perigo agora
+            </div>
+          </div>
+        </button>
+
+        <button class="btn-menu btn-apoio" onclick="abrirTela('tela-apoio')">
+          <div>
+            <div>Onde buscar apoio</div>
+            <div style="font-size: 13px; font-weight: normal">
+              Delegacias e suporte
+            </div>
+          </div>
+        </button>
+
+        <button
+          class="btn-menu btn-informar"
+          onclick="abrirTela('tela-informar')"
+        >
+          <div>
+            <div>Leis e Sinais</div>
+            <div style="font-size: 13px; font-weight: normal">
+              Entenda seus direitos
+            </div>
+          </div>
+        </button>
+
+        <button class="btn-menu btn-sobre" onclick="abrirTela('tela-sobre')">
+          <div>
+            <div>Sobre o Site</div>
+            <div style="font-size: 13px; font-weight: normal">
+              Privacidade e objetivo
+            </div>
+          </div>
+        </button>
+      </div>
+
+      <div id="tela-ajuda" class="tela-conteudo">
+        <button class="btn-voltar" onclick="voltarInicio()">⬅ Voltar</button>
+        <h2>Ajuda Imediata</h2>
+        <p>Se a violência está acontecendo agora:</p>
+        <a href="tel:190" class="destaque-tel">LIGUE 190 (Polícia)</a>
+        <hr />
+        <p>Para orientação, denúncia anônima e acolhimento:</p>
+        <a href="tel:180" class="destaque-tel" style="background-color: #4a148c"
+          >LIGUE 180 (Central Mulher)</a
+        >
+      </div>
+
+      <div id="tela-apoio" class="tela-conteudo">
+        <button class="btn-voltar" onclick="voltarInicio()">⬅ Voltar</button>
+        <h2>Rede de Apoio</h2>
+        <div class="box-info">
+          <strong>DEAM (Delegacia da Mulher):</strong><br />
+          É o local especializado para registrar boletim de ocorrência e pedir
+          medidas protetivas.
+        </div>
+        <div class="box-info">
+          <strong>Defensoria Pública:</strong><br />
+          Oferece advogados gratuitos para garantir seus direitos na justiça.
+        </div>
+        <div class="box-info">
+          <strong>Casa da Mulher Brasileira:</strong><br />
+          Em algumas capitais, reúne delegacia, juizado e apoio psicológico no
+          mesmo lugar.
+        </div>
+      </div>
+
+      <div id="tela-informar" class="tela-conteudo">
+        <button class="btn-voltar" onclick="voltarInicio()">⬅ Voltar</button>
+
+        <h2>⚖️ Leis que te protegem</h2>
+
+        <div class="box-info">
+          <div class="destaque-lei">Lei Maria da Penha (11.340/2006)</div>
+          <p>
+            Ela não serve só para agressão física. A lei reconhece 5 tipos de
+            violência doméstica:
+          </p>
+          <ul class="lista-sinais">
+            <li><strong>Física:</strong> Bater, empurrar, chutar.</li>
+            <li>
+              <strong>Psicológica:</strong> Humilhar, isolar, ameaçar, fazer
+              você achar que está louca (Gaslighting).
+            </li>
+            <li>
+              <strong>Patrimonial:</strong> Quebrar seus objetos, rasgar
+              documentos, esconder dinheiro.
+            </li>
+            <li>
+              <strong>Sexual:</strong> Forçar relação ou impedir uso de
+              anticoncepcional.
+            </li>
+            <li><strong>Moral:</strong> Calúnia, difamação ou injúria.</li>
+          </ul>
+          <p>
+            <strong>Seu Direito Principal:</strong> Pedir Medidas Protetivas de
+            Urgência (o juiz pode ordenar que ele saia de casa ou não se
+            aproxime de você em até 48h).
+          </p>
+        </div>
+
+        <div class="box-info">
+          <div class="destaque-lei">Lei do Feminicídio (13.104/2015)</div>
+          <p>
+            Transforma o assassinato de mulheres em crime hediondo, com penas
+            mais altas. O objetivo é dar visibilidade ao fato de que a mulher
+            morreu <em>por ser mulher</em>.
+          </p>
+        </div>
+
+        <h2>Sinais de Alerta</h2>
+        <p>A violência evolui. Identifique em que fase você está:</p>
+
+        <h3>1. Aumento da Tensão</h3>
+        <p>
+          O agressor fica irritado por coisas pequenas. Você sente que está
+          "pisando em ovos" para não desagradá-lo. Começam os gritos e o ciúme
+          excessivo.
+        </p>
+
+        <h3>2. Ato de Violência (Explosão)</h3>
+        <p>
+          Acontece a agressão de fato (física, verbal ou quebra de objetos). É
+          aqui que muitas mulheres sentem medo e buscam ajuda.
+        </p>
+
+        <h3>3. "Lua de Mel"</h3>
+        <p>
+          O agressor pede desculpas, chora, diz que "perdeu a cabeça" e promete
+          mudar. Ele fica carinhoso. <strong>Cuidado:</strong> essa fase é uma
+          armadilha e a violência sempre volta a acontecer.
+        </p>
+      </div>
+
+      <div id="tela-sobre" class="tela-conteudo">
+        <button class="btn-voltar" onclick="voltarInicio()">⬅ Voltar</button>
+        <h2>Sobre o Projeto</h2>
+        <p>Este site foi desenvolvido para fins educacionais e de prevenção.</p>
+        <p><strong>Privacidade Garantida:</strong></p>
+        <ul>
+          <li>Não usamos cookies de rastreamento.</li>
+          <li>Nenhum dado é salvo no servidor.</li>
+          <li>Funciona totalmente offline após carregar.</li>
+        </ul>
+      </div>
+    </main>
+
+    <script>
+      function abrirTela(idTela) {
+        document.getElementById("menu-principal").style.display = "none";
+
+        document
+          .querySelectorAll(".tela-conteudo")
+          .forEach((t) => (t.style.display = "none"));
+
+        document.getElementById(idTela).style.display = "block";
+        window.scrollTo(0, 0);
+      }
+
+      function voltarInicio() {
+        document
+          .querySelectorAll(".tela-conteudo")
+          .forEach((t) => (t.style.display = "none"));
+        document.getElementById("menu-principal").style.display = "flex";
+      }
+    </script>
+  </body>
+</html>
