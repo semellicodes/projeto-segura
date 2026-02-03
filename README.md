@@ -41,4 +41,4 @@ Como é um projeto estático, não é necessário instalar dependências (npm, n
 
 1. Clone este repositório:
    ```bash
-   git clone [https://github.com/semellicodes/projeto-segura.git](https://github.com/semellicodes/projeto-segura.git)
+   git clone git clone https://github.com/semellicodes/projeto-segura.git
