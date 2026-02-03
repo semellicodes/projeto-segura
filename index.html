@@ -4,184 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projeto Segura</title>
-    <style>
-      /* --- ESTILO GERAL --- */
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
-        color: #333;
-        line-height: 1.6;
-      }
-
-      /* Cabeçalho */
-      header {
-        background-color: #fff;
-        padding: 15px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-      }
-
-      .logo {
-        font-weight: bold;
-        color: #4a148c;
-        font-size: 1.1rem;
-      }
-
-      .btn-sair {
-        background-color: #d32f2f;
-        color: white;
-        border: none;
-        padding: 8px 12px;
-        border-radius: 4px;
-        font-weight: bold;
-        cursor: pointer;
-      }
-
-      /* Container */
-      .container {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 20px;
-        padding-bottom: 80px; /* Espaço extra no final */
-      }
-
-      #menu-principal {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 20px;
-      }
-
-      .btn-menu {
-        border: none;
-        padding: 25px;
-        font-size: 18px;
-        font-weight: bold;
-        border-radius: 12px;
-        cursor: pointer;
-        text-align: left;
-        transition: transform 0.2s;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-
-      .btn-menu:active {
-        transform: scale(0.98);
-      }
-
-      /* Cores do Menu */
-      .btn-ajuda {
-        background-color: #ffebee;
-        color: #b71c1c;
-        border-left: 6px solid #b71c1c;
-      }
-      .btn-apoio {
-        background-color: #e8f5e9;
-        color: #1b5e20;
-        border-left: 6px solid #1b5e20;
-      }
-      .btn-informar {
-        background-color: #f3e5f5;
-        color: #4a148c;
-        border-left: 6px solid #4a148c;
-      }
-      .btn-sobre {
-        background-color: #e0e0e0;
-        color: #424242;
-        border-left: 6px solid #424242;
-      }
-
-      .icone {
-        font-size: 24px;
-      }
-
-      /* --- TELAS DE CONTEÚDO --- */
-      .tela-conteudo {
-        display: none;
-        background: white;
-        padding: 25px;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        animation: fadeIn 0.3s;
-      }
-
-      .btn-voltar {
-        background: #eee;
-        border: none;
-        color: #333;
-        padding: 10px 15px;
-        border-radius: 20px;
-        font-size: 14px;
-        font-weight: bold;
-        cursor: pointer;
-        margin-bottom: 20px;
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-      }
-
-      h2 {
-        color: #4a148c;
-        margin-top: 10px;
-        border-bottom: 2px solid #f3e5f5;
-        padding-bottom: 10px;
-      }
-      h3 {
-        color: #6a1b9a;
-        margin-top: 25px;
-        font-size: 1.1rem;
-      }
-
-      /* Estilos específicos para texto informativo */
-      .box-info {
-        background-color: #fafafa;
-        border-left: 4px solid #6a1b9a;
-        padding: 15px;
-        margin-bottom: 15px;
-        border-radius: 0 8px 8px 0;
-      }
-
-      .lista-sinais li {
-        margin-bottom: 8px;
-      }
-      .destaque-lei {
-        font-weight: bold;
-        color: #4a148c;
-      }
-
-      .destaque-tel {
-        display: block;
-        background-color: #d32f2f;
-        color: white;
-        text-align: center;
-        padding: 15px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 20px;
-        margin: 15px 0;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
   </head>
   <body>
     <header>
@@ -238,7 +60,7 @@
       </div>
 
       <div id="tela-ajuda" class="tela-conteudo">
-        <button class="btn-voltar" onclick="voltarInicio()">⬅ Voltar</button>
+        <button class="btn-voltar" onclick="voltarInicio()">Voltar</button>
         <h2>Ajuda Imediata</h2>
         <p>Se a violência está acontecendo agora:</p>
         <a href="tel:190" class="destaque-tel">LIGUE 190 (Polícia)</a>
@@ -250,7 +72,7 @@
       </div>
 
       <div id="tela-apoio" class="tela-conteudo">
-        <button class="btn-voltar" onclick="voltarInicio()">⬅ Voltar</button>
+        <button class="btn-voltar" onclick="voltarInicio()">Voltar</button>
         <h2>Rede de Apoio</h2>
         <div class="box-info">
           <strong>DEAM (Delegacia da Mulher):</strong><br />
@@ -269,9 +91,9 @@
       </div>
 
       <div id="tela-informar" class="tela-conteudo">
-        <button class="btn-voltar" onclick="voltarInicio()">⬅ Voltar</button>
+        <button class="btn-voltar" onclick="voltarInicio()">Voltar</button>
 
-        <h2>⚖️ Leis que te protegem</h2>
+        <h2>Leis que te protegem</h2>
 
         <div class="box-info">
           <div class="destaque-lei">Lei Maria da Penha (11.340/2006)</div>
@@ -301,7 +123,6 @@
             aproxime de você em até 48h).
           </p>
         </div>
-
         <div class="box-info">
           <div class="destaque-lei">Lei do Feminicídio (13.104/2015)</div>
           <p>
@@ -320,13 +141,11 @@
           "pisando em ovos" para não desagradá-lo. Começam os gritos e o ciúme
           excessivo.
         </p>
-
         <h3>2. Ato de Violência (Explosão)</h3>
         <p>
           Acontece a agressão de fato (física, verbal ou quebra de objetos). É
           aqui que muitas mulheres sentem medo e buscam ajuda.
         </p>
-
         <h3>3. "Lua de Mel"</h3>
         <p>
           O agressor pede desculpas, chora, diz que "perdeu a cabeça" e promete
@@ -334,9 +153,8 @@
           armadilha e a violência sempre volta a acontecer.
         </p>
       </div>
-
       <div id="tela-sobre" class="tela-conteudo">
-        <button class="btn-voltar" onclick="voltarInicio()">⬅ Voltar</button>
+        <button class="btn-voltar" onclick="voltarInicio()">Voltar</button>
         <h2>Sobre o Projeto</h2>
         <p>Este site foi desenvolvido para fins educacionais e de prevenção.</p>
         <p><strong>Privacidade Garantida:</strong></p>
@@ -347,25 +165,5 @@
         </ul>
       </div>
     </main>
-
-    <script>
-      function abrirTela(idTela) {
-        document.getElementById("menu-principal").style.display = "none";
-
-        document
-          .querySelectorAll(".tela-conteudo")
-          .forEach((t) => (t.style.display = "none"));
-
-        document.getElementById(idTela).style.display = "block";
-        window.scrollTo(0, 0);
-      }
-
-      function voltarInicio() {
-        document
-          .querySelectorAll(".tela-conteudo")
-          .forEach((t) => (t.style.display = "none"));
-        document.getElementById("menu-principal").style.display = "flex";
-      }
-    </script>
   </body>
 </html>
