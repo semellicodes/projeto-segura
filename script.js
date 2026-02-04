@@ -48,7 +48,7 @@ function iniciarMapa() {
       );
     } else {
       alert("Geolocalização não suportada.");
-      carregarMapaLeaflet(-23.55052, -46.6333);
+      carregarMapaLeaflet(-1.4557549, -48.4901799);
     }
   }, 300);
 }
@@ -80,11 +80,11 @@ function sucessoLocalizacao(position) {
 
 function erroLocalizacao() {
   alert("Não conseguimos sua localização. Mostrando mapa geral.");
-  carregarMapaLeaflet(-15.793889, -47.882778);
+  carregarMapaLeaflet(-1.4557549, -48.4901799);
 }
 
 function carregarMapaLeaflet(lat, lng) {
-  map = L.map("map").setView([lat, lng], 14);
+  map = L.map("map").setView([lat, lng], 13);
 
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: "&copy; OpenStreetMap contributors",
