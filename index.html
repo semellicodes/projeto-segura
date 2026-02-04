@@ -29,42 +29,28 @@
 
     <main class="container">
       <div id="menu-principal">
-        <div style="text-align: center; margin-bottom: 10px; color: #555">
+        <div class="texto-instrucao">
           <p>Toque em uma opção:</p>
         </div>
 
         <button class="btn-menu btn-ajuda" onclick="abrirTela('tela-ajuda')">
           <div>
             <div>Ajuda imediata</div>
-            <div style="font-size: 13px; font-weight: normal">
-              Estou em perigo agora
-            </div>
+            <div class="descricao-btn">Estou em perigo agora</div>
           </div>
         </button>
 
-        <button
-          class="btn-menu btn-apoio"
-          style="
-            border-left-color: #2196f3;
-            background-color: #e3f2fd;
-            color: #0d47a1;
-          "
-          onclick="iniciarMapa()"
-        >
+        <button class="btn-menu btn-mapa" onclick="iniciarMapa()">
           <div>
             <div>Mapa de segurança</div>
-            <div style="font-size: 13px; font-weight: normal">
-              Delegacias próximas
-            </div>
+            <div class="descricao-btn">Delegacias próximas</div>
           </div>
         </button>
 
         <button class="btn-menu btn-apoio" onclick="abrirTela('tela-apoio')">
           <div>
             <div>Onde buscar apoio</div>
-            <div style="font-size: 13px; font-weight: normal">
-              Delegacias e suporte
-            </div>
+            <div class="descricao-btn">Delegacias e suporte</div>
           </div>
         </button>
 
@@ -74,18 +60,14 @@
         >
           <div>
             <div>Leis e sinais</div>
-            <div style="font-size: 13px; font-weight: normal">
-              Entenda seus direitos
-            </div>
+            <div class="descricao-btn">Entenda seus direitos</div>
           </div>
         </button>
 
         <button class="btn-menu btn-sobre" onclick="abrirTela('tela-sobre')">
           <div>
             <div>Sobre o site</div>
-            <div style="font-size: 13px; font-weight: normal">
-              Privacidade e objetivo
-            </div>
+            <div class="descricao-btn">Privacidade e objetivo</div>
           </div>
         </button>
       </div>
