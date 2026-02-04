@@ -4,8 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projeto Segura</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
   </head>
-  <link rel="stylesheet" href="style.css" />
+
   <body>
     <header>
       <div class="logo">Projeto Segura</div>
@@ -25,6 +38,23 @@
             <div>Ajuda imediata</div>
             <div style="font-size: 13px; font-weight: normal">
               Estou em perigo agora
+            </div>
+          </div>
+        </button>
+
+        <button
+          class="btn-menu btn-apoio"
+          style="
+            border-left-color: #2196f3;
+            background-color: #e3f2fd;
+            color: #0d47a1;
+          "
+          onclick="iniciarMapa()"
+        >
+          <div>
+            <div>Mapa de Segurança</div>
+            <div style="font-size: 13px; font-weight: normal">
+              Delegacias próximas
             </div>
           </div>
         </button>
@@ -74,6 +104,56 @@
         <a href="tel:180" class="destaque-tel" style="background-color: #4a148c"
           >LIGUE 180 (Central Mulher)</a
         >
+      </div>
+
+      <div
+        id="tela-mapa"
+        class="tela-conteudo"
+        style="padding: 0; height: 100vh; display: none; position: relative"
+      >
+        <button
+          onclick="voltarInicio()"
+          style="
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 999;
+            padding: 10px 20px;
+            background: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+          "
+        >
+          Voltar
+        </button>
+
+        <div id="map" style="width: 100%; height: 100%"></div>
+
+        <div
+          id="legenda-mapa"
+          style="
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: flex;
+            gap: 15px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+          "
+        >
+          <span style="color: purple">Delegacia da Mulher</span>
+          <span style="color: blue">Polícia Militar</span>
+          <span style="color: green">Polícia Civil</span>
+        </div>
       </div>
 
       <div id="tela-apoio" class="tela-conteudo">
@@ -167,6 +247,7 @@
           é do agressor.</strong
         >
       </div>
+
       <div id="tela-sobre" class="tela-conteudo">
         <button class="btn-voltar" onclick="voltarInicio()">Voltar</button>
         <h2>Sobre o Site</h2>
